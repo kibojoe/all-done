@@ -2,21 +2,25 @@
 
 >>> Sites
 
+Usando Git (e GitHub) no Windows
 https://blog.dmatoso.com/usando-git-e-github-no-windows-a059c791c0af
+
+Como ter duas chaves SSH no Linux
+http://www.brunonardini.com.br/desenv-back-end/como-ter-duas-chaves-ssh-no-linux
 
 >>> Manuseio do GitHub
 
-git init
-git remote add origin git@github.com:site/site_projeto.git (por exemplo: git remote add origin git@github.com:kibojoe/kibojoe.github.io.git)
-git status
-git add *
-git commit -m "nome do commit" (por exemplo: git commit -m "return github")
-git push -f origin master
+> git init
+> git remote add origin git@github.com:site/site_projeto.git (por exemplo: git remote add origin git@github.com:kibojoe/kibojoe.github.io.git)
+> git status
+> git add *
+> git commit -m "nome do commit" (por exemplo: git commit -m "return github")
+> git push -f origin master
 
 >>> SSH GitHub
 
-ssh-keygen -t rsa -C "seu_email@email.com"
-~/.ssh/id_rsa.pub (abriu em um loco de notas)
-Agora no GitHub, vá em “Settings” e depois “SSH and GPG Keys”. Clique “New SSH key”. 
+> ssh-keygen -t rsa -C "seu_email@email.com"
+~/.ssh/id_rsa.pub (abrir em um bloco de notas)
+> OBS.: Agora no GitHub, vá em “Settings” e depois “SSH and GPG Keys”. Clique “New SSH key”. 
 Informe um título para identificar o computador onde a a chave foi gerada e no campo “Key” cole todo o conteúdo do arquivo id_rsa.pub
-ssh -T git@github.com 
+> ssh -T git@github.com (para testar se está tudo ok!) 
