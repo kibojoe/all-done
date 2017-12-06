@@ -8,6 +8,12 @@ https://blog.dmatoso.com/usando-git-e-github-no-windows-a059c791c0af
 Como ter duas chaves SSH no Linux
 http://www.brunonardini.com.br/desenv-back-end/como-ter-duas-chaves-ssh-no-linux
 
+Fix "Could not open a connection to your authentication agent." when using ssh-add
+https://coderwall.com/p/rdi_wq/fix-could-not-open-a-connection-to-your-authentication-agent-when-using-ssh-add
+
+Quick Tip: How to Work with GitHub and Multiple Accounts
+https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts--net-22574
+
 >>> Manuseio do GitHub
 
 > git init
@@ -24,3 +30,10 @@ http://www.brunonardini.com.br/desenv-back-end/como-ter-duas-chaves-ssh-no-linux
 > OBS.: Agora no GitHub, vá em “Settings” e depois “SSH and GPG Keys”. Clique “New SSH key”. 
 Informe um título para identificar o computador onde a a chave foi gerada e no campo “Key” cole todo o conteúdo do arquivo id_rsa.pub
 > ssh -T git@github.com (para testar se está tudo ok!) 
+
+>>> Corrigir: Could not open a connection to your authentication agent.
+> No terminal digitar: ssh-agent
+> Depois digitar: eval $(ssh-agent)
+Feito isto é possível rodar o comando ssh-add ~/.ssh/id_rsa
+
+
