@@ -23,17 +23,43 @@ https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multip
 > git commit -m "nome do commit" (por exemplo: git commit -m "return github")
 > git push -f origin master
 
+
+>>>  Corrigir: Bad owner or permissions on /Users/username/.ssh/config
+
+git push -f origin master
+Bad owner or permissions on /home/holmes/.ssh/config
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights
+and the repository exists.
+
+# chmod 600 ~/.ssh/config (https://github.com/ddollar/heroku-accounts/issues/15)
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!                                          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0777 for '/home/holmes/.ssh/id_rsa_holmeslinux' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "/home/holmes/.ssh/id_rsa_holmeslinux": bad permissions
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights
+and the repository exists.
+
+# chmod 600 ~/.ssh/id_rsa (https://stackoverflow.com/questions/9270734/ssh-permissions-are-too-open-error)
+
 >>> SSH GitHub
 
-> ssh-keygen -t rsa -C "seu_email@email.com"
+# ssh-keygen -t rsa -C "seu_email@email.com"
 ~/.ssh/id_rsa.pub (abrir em um bloco de notas)
-> OBS.: Agora no GitHub, vá em “Settings” e depois “SSH and GPG Keys”. Clique “New SSH key”. 
+# OBS.: Agora no GitHub, vá em “Settings” e depois “SSH and GPG Keys”. Clique “New SSH key”. 
 Informe um título para identificar o computador onde a a chave foi gerada e no campo “Key” cole todo o conteúdo do arquivo id_rsa.pub
-> ssh -T git@github.com (para testar se está tudo ok!) 
+# ssh -T git@github.com (para testar se está tudo ok!) 
 
 >>> Corrigir: Could not open a connection to your authentication agent.
-> No terminal digitar: ssh-agent
-> Depois digitar: eval $(ssh-agent)
+
+# No terminal digitar: ssh-agent
+# Depois digitar: eval $(ssh-agent)
 Feito isto é possível rodar o comando ssh-add ~/.ssh/id_rsa
 
 
