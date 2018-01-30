@@ -1,0 +1,14 @@
+<<< SOBRE FILEZILLA >>>
+
+>>> Servidor IGOR
+
+host: ftp.trueexpert.tk
+user: -------
+senha: -------
+
+>>> Servidor SourceForge
+
+host: sftp://frs.sourceforge.net
+user: -------
+clave: ------- 
+port: 22
